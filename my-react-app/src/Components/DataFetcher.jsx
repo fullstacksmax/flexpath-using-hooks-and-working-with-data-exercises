@@ -22,7 +22,7 @@ return of the `DataFetcher` component, using an <h2> tag for the 'title'
 value and a <p> tag for the 'body' value.
 
 Then, import and display this component in App.jsx. */
-import { useState,useEffect } from "react"
+import { useState, useEffect } from "react"
 
 export default function DataFetcher() {
     const [data, setData] = useState("null")
