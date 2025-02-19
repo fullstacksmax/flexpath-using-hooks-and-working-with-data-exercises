@@ -22,22 +22,31 @@ import { useState, useEffect } from 'react';
 
 export default function EnhancedDataFetcher() {
         const [data, setData] = useState(null);
+        const [loading, setLoading] = useState(false)
+        const [error, setError] = useState(false)
     
         useEffect(() => {
           const fetchData = async () => {
+            setLoading(true)
             try{
-            const response = await fetch(`https://jsonplaceholder.typicode.com/posts/5`)
+            const response = await fetch(`https://jsonplaceholder.typicode.com/invalid-url`)
             const json = await response.json();
             setData(json);
-            } catch(error){
-                console.error(`there was an error ${error}`)
+            if(!response.ok){
+              throw new Error("network response not ok")
             }
+            } catch(error){
+                setError(error.message)
+            }
+            setLoading(false)
           };
           fetchData();  
         }, []);
         
         
-        if (!data) return <div>Loading...</div>
+        if (loading) return <div>Loading...</div>;
+        if (error) return <div>{error}</div>;
+        if (!data) return null;
     
         return (
             <h2>async title__ {data.title} 
