@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 import SimpleForm from "./Components/SimpleForm";
 import EventLogger from "./Components/EventLogger";
 import AsyncDataFetcher from "./Components/AsyncDataFetcher";
+import EnhancedDataFetcher from "./Components/EnhancedDataFetcher";
 
 
 function App() {

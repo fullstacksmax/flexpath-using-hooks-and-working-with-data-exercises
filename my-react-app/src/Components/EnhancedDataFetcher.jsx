@@ -18,6 +18,7 @@ In your App.jsx file, add a new <Link> and <Route> component to point to and
 display this `EnhancedDataFetcher` component. */
 
 import React from 'react'
+import { useState, useEffect } from 'react';
 
 export default function EnhancedDataFetcher() {
         const [data, setData] = useState(null);
