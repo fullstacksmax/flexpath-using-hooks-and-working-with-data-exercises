@@ -37,6 +37,33 @@ display this `CallbackDemo` component.
 See how the CallbackDemo component can efficiently render the updated count 
 after either button press due to the MemoizedButton and `useCallback` method. */
 
+import React from 'react'
+import {useState, useCallback} from 'react'
+
+
+
+
+
+
+function Button({ handleClick, label }) {
+    console.log(`rendering button ${label}`)
+    return <button onClick={handleClick}>{label}</button>
+}
+const MemoizedButton = React.memo(Button)
+
 export default function CallbackDemo() {
-    
+    const [count, setCount] = useState(0);
+
+    const increment = useCallback(() => setCount((c) => c + 1),[]);
+    const decrement = useCallback(() => setCount((c) => c - 1),[]); 
+
+    return (
+        <div>
+            <h1>{count}</h1>
+            <MemoizedButton handleClick={increment} label="increment" />
+            <MemoizedButton handleClick={decrement} label="decrement" />
+
+        </div>
+    );
+
 }

@@ -14,6 +14,8 @@ import SimpleForm from "./Components/SimpleForm";
 import EventLogger from "./Components/EventLogger";
 import AsyncDataFetcher from "./Components/AsyncDataFetcher";
 import EnhancedDataFetcher from "./Components/EnhancedDataFetcher";
+import CallbackDemo from "./Components/CallbackDemo";
+import MemoizationDemo from "./Components/MemoizationDemo";
 
 
 function App() {
@@ -23,7 +25,8 @@ function App() {
     <nav>
         <Link to='/'>Home</Link> | <Link to='/about'>About</Link> | <Link to='/user/1' >User1</Link> |
         <Link to='form'>Simple Form</Link> | <Link to='logger'>Event Logger</Link> | 
-        <Link to='asyncFetch' >Async Fetch </Link> | <Link to='enhancedfetch' >Enhanced Fetcher</Link>
+        <Link to='asyncFetch' >Async Fetch </Link> | <Link to='enhancedfetch' >Enhanced Fetcher</Link> |
+        <Link to='callback '>Callback</Link> | <Link to='memo' >Memo Demo</Link>
     </nav>
     <hr />
     <Routes>
@@ -35,11 +38,13 @@ function App() {
       <Route path="logger" element={<EventLogger />} />
       <Route path='asyncFetch' element={<AsyncDataFetcher />} />
       <Route path='enhancedfetch' element={<EnhancedDataFetcher />} />
+      <Route path='callback' element={<CallbackDemo />} />
+      <Route path='memo' element={<MemoizationDemo />} />
     </Routes>
     <ErrorBoundary>
-    <Counter />
-    <SquareCalculator />
-    {/* <DataFetcher /> */}
+    {/* <Counter />
+    <SquareCalculator /> 
+    <DataFetcher /> */}
 
     </ErrorBoundary>
     </div>
