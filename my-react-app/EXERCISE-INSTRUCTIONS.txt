@@ -391,6 +391,10 @@ Description:
 
 Explain the benefits of using custom hooks like useFetch for data fetching.
 
+After successfully building the custom hook you now have a repeatable
+process that can be used to pass different prop values to and trust
+that the process in this case fetch will function as intended
+
 
 
 Exercise 18: Using useReducer for State Management

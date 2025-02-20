@@ -16,6 +16,8 @@ import AsyncDataFetcher from "./Components/AsyncDataFetcher";
 import EnhancedDataFetcher from "./Components/EnhancedDataFetcher";
 import CallbackDemo from "./Components/CallbackDemo";
 import MemoizationDemo from "./Components/MemoizationDemo";
+import CustomHookDemo from "./Components/CustomHookDemo";
+import ReducerCounter from "./Components/ReducerCounter";
 
 
 function App() {
@@ -26,7 +28,8 @@ function App() {
         <Link to='/'>Home</Link> | <Link to='/about'>About</Link> | <Link to='/user/1' >User1</Link> |
         <Link to='form'>Simple Form</Link> | <Link to='logger'>Event Logger</Link> | 
         <Link to='asyncFetch' >Async Fetch </Link> | <Link to='enhancedfetch' >Enhanced Fetcher</Link> |
-        <Link to='callback '>Callback</Link> | <Link to='memo' >Memo Demo</Link>
+        <Link to='callback '>Callback</Link> | <Link to='memo' >Memo Demo</Link> | 
+        <Link to='customhook' >Custom Fetch Hook</Link> | <Link to='reduce' >Reducer Counter</Link>
     </nav>
     <hr />
     <Routes>
@@ -40,6 +43,8 @@ function App() {
       <Route path='enhancedfetch' element={<EnhancedDataFetcher />} />
       <Route path='callback' element={<CallbackDemo />} />
       <Route path='memo' element={<MemoizationDemo />} />
+      <Route path='customhook' element={<CustomHookDemo />} />
+      <Route path='reduce' element={<ReducerCounter />} />
     </Routes>
     <ErrorBoundary>
     {/* <Counter />

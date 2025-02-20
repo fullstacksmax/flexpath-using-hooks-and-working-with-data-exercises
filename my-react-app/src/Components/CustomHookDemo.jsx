@@ -20,11 +20,24 @@ and finally the data if it is returned. Otherwise, display nothing.
 In your App.jsx file, add a new <Link> and <Route> component to point to 
 and display this `CustomHookDemo` component. */
 import React from 'react'
-import {UseFetch} from "./Hooks"
+import useFetch from '../Hooks/UseFetch'
 
-const url = "https://jsonplaceholder.typicode.com/posts/3"
 
-export default function CustomHookDemo(url) {
 
+
+export default function CustomHookDemo() {
+    const { data, loading, err } = useFetch(
+        "https://jsonplaceholder.typicode.com/posts/3"
+    );
+    if(loading) return <div>Loading...</div>
+    if(!data) return null
+    if(err) return <div>there was an error {err} </div>
+
+    return (
+        <div>
+            <h2>{data.title}</h2>
+            <p>{data.body}</p>
+            </div>
+    );
 
 }
