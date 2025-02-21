@@ -18,6 +18,8 @@ import CallbackDemo from "./Components/CallbackDemo";
 import MemoizationDemo from "./Components/MemoizationDemo";
 import CustomHookDemo from "./Components/CustomHookDemo";
 import ReducerCounter from "./Components/ReducerCounter";
+import DebouncedInput from "./Components/DebouncedInput";
+import ThrottledScrollLogger from "./Components/ThrottledScrollLogger";
 
 
 function App() {
@@ -29,7 +31,8 @@ function App() {
         <Link to='form'>Simple Form</Link> | <Link to='logger'>Event Logger</Link> | 
         <Link to='asyncFetch' >Async Fetch </Link> | <Link to='enhancedfetch' >Enhanced Fetcher</Link> |
         <Link to='callback '>Callback</Link> | <Link to='memo' >Memo Demo</Link> | 
-        <Link to='customhook' >Custom Fetch Hook</Link> | <Link to='reduce' >Reducer Counter</Link>
+        <Link to='customhook' >Custom Fetch Hook</Link> | <Link to='reduce' >Reducer Counter</Link> |
+        <Link to='debounce' >Debounced Input</Link> | <Link to='throttled' >Scroll Logger</Link>
     </nav>
     <hr />
     <Routes>
@@ -45,6 +48,8 @@ function App() {
       <Route path='memo' element={<MemoizationDemo />} />
       <Route path='customhook' element={<CustomHookDemo />} />
       <Route path='reduce' element={<ReducerCounter />} />
+      <Route path='debounce' element={<DebouncedInput />} />
+      <Route path='throttled' element={<ThrottledScrollLogger />} />
     </Routes>
     <ErrorBoundary>
     {/* <Counter />

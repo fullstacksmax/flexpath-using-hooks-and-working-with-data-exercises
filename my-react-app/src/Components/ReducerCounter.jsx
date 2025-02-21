@@ -35,10 +35,38 @@ In your App.jsx file, add a new <Link> and <Route> component to point to and
 display this `ReducerCounter` component.
  */
 import React from 'react'
-import { useState, useReducer } from 'react'
+import { useReducer } from 'react'
+
 
 
 export default function ReducerCounter() {
-    
 
+    const initialState = 0;
+    const reducer = (state, action) => {
+    switch(action.type){
+        case 'Increment':
+            return state + 1;
+        case 'Decrement':
+            return state - 1;
+        case 'Reset':
+            return initialState
+        default:
+            return state;
+    }
+}
+
+    const [count, dispatch] = useReducer(reducer, initialState);
+
+
+
+    return (
+        <div>
+        <h2>{count}</h2>
+        <button onClick={() => dispatch({type: 'Increment'}) }>Increment</button>
+        <button onClick={() => dispatch({type: 'Decrement'}) }>Decrement</button>
+        <button onClick={() => dispatch({type: 'Reset'}) }>Reset</button>
+
+        </div>
+        
+    );
 }
